@@ -5,7 +5,7 @@ import './App.scss';
 function App() {
   const [teamMembers, setTeamMembers] = useState([
     {
-      Name: "Russ",
+      name: "Russ",
       email: "test@test.io",
       role: "LS Full Satack"
     }
@@ -27,7 +27,14 @@ function App() {
           Learn React
         </a>
 
-        
+        {teamMembers.map(item => (
+          <div className="teamcard">
+            <p>{item.name}</p>
+            <p>{item.email}</p>
+            <p>{item.role}</p>
+          </div>
+        ))}
+
       </header>
     </div>
   );
