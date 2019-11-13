@@ -3,7 +3,13 @@ import logo from './logo.svg';
 import './App.scss';
 
 function App() {
-  const [teamMembers, setTeamMembers] = useState( [] );
+  const [teamMembers, setTeamMembers] = useState([
+    {
+      Name: "Russ",
+      email: "test@test.io",
+      role: "LS Full Satack"
+    }
+  ]);
 
   return (
     <div className="App">
@@ -20,6 +26,8 @@ function App() {
         >
           Learn React
         </a>
+
+        
       </header>
     </div>
   );
