@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.scss';
 
+import TeamMemberForm from "./Form";
+
 function App() {
   const [teamMembers, setTeamMembers] = useState([
     {
@@ -26,6 +28,10 @@ function App() {
         >
           Learn React
         </a>
+
+        <TeamMemberForm />
+
+
 
         {teamMembers.map(item => (
           <div className="teamcard">

@@ -28,3 +28,19 @@
     color: #09d3ac;
   }
 }
+
+.fromSass {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 120px;
+  width: 90%;
+  div {
+    display: flex;
+    align-items: center;
+    label {
+      padding: 0.5em;
+    }
+  }
+
+}
