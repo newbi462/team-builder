@@ -1,15 +1,40 @@
 import React, { useState } from "react";
 
 const TeamMemberForm = props => {
+  const [formTeamMembers, setFormTeamMembers] = useState([
+    {
+      name: "",
+      email: "",
+      role: ""
+    }
+  ]);
+
+
+
+  const onFormChange = fooBarBanna => {
+    setFormTeamMembers({ ...formTeamMembers, [fooBarBanna.target.name]: fooBarBanna.target.value });
+  };
+
+  const submitTheForm = notAfooBanna => {
+    notAfooBanna.preventDefault();
+    props.addTeamMembers(formTeamMembers);
+    setFormTeamMembers({
+      name: "",
+      email: "",
+      role: ""
+    });
+  };
 
   return (
-    <form className="fromSass">
+    <form onSubmit={submitTheForm} className="fromSass">
       <div>
         <label htmlFor="name">Name</label>
         <input
-          id="title"
+          id="name"
           type="text"
-          name="title"
+          name="name"
+          onChange={onFormChange}
+          value={formTeamMembers.name}
         />
       </div>
       <div>
@@ -18,6 +43,8 @@ const TeamMemberForm = props => {
           id="email"
           type="text"
           name="email"
+          onChange={onFormChange}
+          value={formTeamMembers.email}
         />
       </div>
       <div>
@@ -26,8 +53,11 @@ const TeamMemberForm = props => {
           id="role"
           type="text"
           name="role"
+          onChange={onFormChange}
+          value={formTeamMembers.role}
         />
       </div>
+      <button type="submit">Add Me</button>
     </form>
   );
 };

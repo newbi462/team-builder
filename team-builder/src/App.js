@@ -13,6 +13,17 @@ function App() {
     }
   ]);
 
+
+
+  const addTeamMembers = item => {
+    const addMe = {
+      name: item.name,
+      email: item.email,
+      role: item.role
+    };
+    setTeamMembers([...teamMembers, addMe]);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -29,7 +40,7 @@ function App() {
           Learn React
         </a>
 
-        <TeamMemberForm />
+        <TeamMemberForm addTeamMembers={addTeamMembers}/>
 
 
 
