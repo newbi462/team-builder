@@ -22,12 +22,8 @@
 }
 
 //try sass
-.teamcard {
-  border: solid 3px white;
-  p {
-    color: #09d3ac;
-  }
-}
+@import "cards";
+
 
 .fromSass {
   display: flex;
